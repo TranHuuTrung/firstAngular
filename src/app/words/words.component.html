@@ -1,13 +1,39 @@
 <div class="container">
+  
+  <div class="row" [ngStyle]="{marginTop: '20px', marginBottom: '20px'}">
+    <div class="col-xs-4 offset-md-4 col-sm-4 col-md-4 col-lg-4" *ngIf="isShowForm">
+      <div class="form-group">
+        <label for="">Nhập từ vựng mới</label>
+        <input type="text" class="form-control" placeholder="English" [(ngModel)]="newEn">
+        <br>
+        <input type="text" class="form-control" placeholder="Vietnamese" [(ngModel)]="newVn">
+        <br>
+        <button type="button" (click)="addNewWord()" class="btn btn-success">Thêm</button>
+      </div>
+    </div>
+    <button type="button" (click)="isShowForm = true" class="btn btn-success" *ngIf="!isShowForm">Thêm</button>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="">Lọc theo</label>
+      <select class="form-control" [(ngModel)]="filterStatus">
+        <option value="XEM_TAT_CA">Xem tất cả</option>
+        <option value="XEM_TU_DA_NHO">Xem các từ đã nhớ</option>
+        <option value="XEM_TU_CHUA_NHO">Xem các từ chưa nhớ</option>
+      </select>
+    </div>
+  </div>
   <div class="row">
     <div *ngFor="let word of arrWords" class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-      <div class="card border-link" [ngStyle]="{marginBottom: '15px'}">
+      <div class="card border-link" [ngStyle]="{marginBottom: '15px'}" *ngIf="filters(word.memorized)">
         <img class="card-img-top img-responsive" [src]="imageUrl" alt="">
         <div class="card-body">
           <h4 class="card-title" [ngStyle]="{color: word.memorized ? 'green' : 'red'}">{{ word.en }}</h4>
           <p class="card-text">{{ word.vn }}</p>
           <p>
-            <button type="button" (click)="toggleStatus(word.id)" class="btn btn-info">Status</button>  
+            <button type="button" (click)="toggleStatus(word.id)" [class]="word.memorized?'btn btn-warning':'btn btn-success'">{{ word.memorized ? 'Chưa thuộc' : 'Đã thuộc'}}</button> 
+            &nbsp;
+            <button type="button" (click)="deleteWord(word.id)" class="btn btn-danger">Xóa</button>  
           </p>
         </div>
       </div>
