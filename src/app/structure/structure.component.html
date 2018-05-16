@@ -1,0 +1,9 @@
+<p *ngIf="isShow">
+  structure works!
+</p>
+<ul>
+  <li *ngFor="let subject of arrSubject">
+    <p>{{ subject }}</p>
+  </li>
+</ul>
+<button type="button" (click)="toggleIf()" class="btn btn-info">Toggle</button>

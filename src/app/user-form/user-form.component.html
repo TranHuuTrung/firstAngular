@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="">Nhập tên</label>
+      <input type="text" class="form-control" required="required" placeholder="Username" [(ngModel)] = "name" #txtUsername>
+    </div>
+    <h3 [ngStyle]="name.length % 2===0? evenText : oddText">My name is {{ name }}</h3>   
+    <button type="button" (click)="toggleHighLight()" class="btn btn-success">ToggleHighLight</button>
+    <br>
+    <code>{{ txtUsername.value | json }}</code>
+    <div [class]="isHighLight ? 'circle': 'square'"></div>
+    <br>
+     <!-- nếu chỗ này mà đưa vào .ts thì khi đảo status của isHighLight thì nó ko cập nhất -->
+    <div [ngClass]="{ circle: !isHighLight, square: isHighLight }"></div>
+  </div>
+</div>  
