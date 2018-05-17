@@ -1,8 +1,14 @@
 
 <div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <h4>Name: {{ name }}</h4>
-    <p>Age: {{ age }}</p>
+  <div class="col-xs-3 col-sm-3 offset-md-4 col-md-3 col-lg-3" [ngStyle]="{ marginBottom: '20px'}">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Name: {{ name }}</h4>
+        <p class="card-text">Age: {{ age }}</p>       
+        <button type="button" (click)="removePerson()" class="btn btn-danger">Xóa</button>
+      </div>
+    </div>
   </div>
 </div>
+
 

@@ -1,3 +1,7 @@
 <ng-container *ngFor="let person of arrPersons">
-  <app-person [name]="person.name" [age]="person.age"></app-person>
+  <app-person 
+    [name]="person.name" 
+    [age]="person.age"
+    (removeByName)="remove($event)"  
+  ></app-person>
 </ng-container>

@@ -12,7 +12,8 @@ import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import { ParentComponent } from './parent.component';
 import { ChildComponent } from './child.component';
-
+import { Parent1Component } from './parent1.component';
+import { Child1Component } from './child1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { ChildComponent } from './child.component';
     PersonComponent,
     ListPersonComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    Parent1Component,
+    Child1Component
   ],
   imports: [
     BrowserModule,
