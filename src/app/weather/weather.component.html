@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-lg-4">
+        <div class="card border-link text-center">
+          <img class="card-img-top img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdp7Z4bBtBxD_rm_wd8XrXswtmGPrb-XwbWPMZ8VP6HXDlcbIA" alt="">
+          <div class="card-body">
+            <div [hidden]="!isLoading">
+                Loading ...
+            </div>
+            <div [hidden]="isLoading">
+                <h4 class="card-title">{{ cityName === '' ? 'CityName': cityName}}</h4>
+                <p class="card-text">{{ cityName === ''? 'Temp ': temp }} &deg;C</p>
+            </div>
+          </div>
+        </div>
+        <div [ngStyle]="{marginTop: '20px'}">
+            <label for="">Nhập tên thành phố của bạn</label>
+            <input type="text" class="form-control" placeholder="enter city name" [(ngModel)]="txtCityName">
+            <br>
+            <button type="button" (click)="getWeather()" class="btn btn-success">Get Weather</button>
+            
+        </div>
+        
+    </div>
+  </div>
+  
+</div> 
+
+
