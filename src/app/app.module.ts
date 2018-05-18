@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-// import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
@@ -17,9 +16,10 @@ import { ChildComponent } from './child.component';
 import { Parent1Component } from './parent1.component';
 import { Child1Component } from './child1.component';
 import { IpComponent } from './ip.component';
+import { WeatherComponent } from './weather/weather.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 import { IpService } from './ip.service';
-import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +36,13 @@ import { WeatherComponent } from './weather/weather.component';
     Parent1Component,
     Child1Component,
     IpComponent,
-    WeatherComponent
+    WeatherComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    // HttpClientModule,
+    HttpClientModule
   ],
   providers: [IpService],
   bootstrap: [AppComponent]

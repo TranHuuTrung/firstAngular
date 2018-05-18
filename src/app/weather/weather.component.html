@@ -5,11 +5,12 @@
           <img class="card-img-top img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdp7Z4bBtBxD_rm_wd8XrXswtmGPrb-XwbWPMZ8VP6HXDlcbIA" alt="">
           <div class="card-body">
             <div [hidden]="!isLoading">
-                Loading ...
+                <i class="fa fa-spinner"></i>
             </div>
             <div [hidden]="isLoading">
-                <h4 class="card-title">{{ cityName === '' ? 'CityName': cityName}}</h4>
+                <h4 class="card-title">{{ cityName === '' ? 'CityName': cityName | uppercase}}</h4>
                 <p class="card-text">{{ cityName === ''? 'Temp ': temp }} &deg;C</p>
+                <p class="card-text">{{ cityName === ''? 'windSpeed': windSpeed }} km/h</p>
             </div>
           </div>
         </div>
