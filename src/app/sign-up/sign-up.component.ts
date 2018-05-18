@@ -16,7 +16,7 @@ export class SignUpComponent implements OnInit {
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
         email: ['',[ Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(8)]]
+        password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
     });
   }
    // convenience getter for easy access to form fields
