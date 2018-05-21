@@ -20,8 +20,11 @@ import { IpComponent } from './ip.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { IpService } from './ip.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +43,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     IpComponent,
     WeatherComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [IpService],
   bootstrap: [AppComponent]

@@ -13,10 +13,10 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-        firstName: ['', Validators.required],
+        firstName: ['', [Validators.required, Validators.minLength(8)] ],
         lastName: ['', Validators.required],
         email: ['',[ Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]]
+        password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern("[a-z]*")]]
     });
   }
    // convenience getter for easy access to form fields
@@ -29,6 +29,7 @@ export class SignUpComponent implements OnInit {
         return;
     }
     console.log(this.f);
+    alert("Thành công");
     
 }
 }
